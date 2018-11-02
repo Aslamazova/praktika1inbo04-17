@@ -1,11 +1,22 @@
-# praktika1inbo04-17
-#Сделать форк, написать фио, добавить файлы-исходники
-TestAuthor.java
+# praktika3inbo04-17
+“Main.java”
 
-public class TestAuthor { public static void main(String[] args) { Author author = new Author("Ежов Алексей", "ezhov.a.s@edu.mirea.ru",'M'); System.out.println(author.toString()); } }
+public class Main { public static void main(String[] args) { MovableCircle circle = new MovableCircle(0,0,5,5,10); System.out.println(circle.toString()); } }
 
-Author.java
+“Movable.java”
 
-public class Author { private String name; private String email; private char gender; public Author(String name, String email, char gender) { this.name = name; this.email = email; this.gender = gender; } public String getName() { return name; } public String getEmail() { return email; }
+public interface Movable { void moveUp(); void moveDown(); void moveLeft(); void moveRight(); }
 
-public char getGender() { return gender; } public void setEmail(String email) { this.email = email; } @Override public String toString() { return name + ' ' +"(" + gender + ")"+" at " + email;
+“MovablePoint.java”
+
+public class MovablePoint implements Movable { int x; int y; int xSpeed; int ySpeed; public MovablePoint(int x, int y, int xSpeed, int ySpeed) { this.x = x; this.y = y; this.xSpeed = xSpeed;
+
+this.ySpeed = ySpeed; } @Override public String toString() { return "MCNVI.MovablePoint{" + "x=" + x + ", y=" + y + ", xSpeed=" + xSpeed + ", ySpeed=" + ySpeed + '}'; } @Override public void moveUp() { y=y+ySpeed; } @Override public void moveDown() { y=y-ySpeed; } @Override public void moveLeft() { x=x-xSpeed; } @Override public void moveRight() { x=x+xSpeed; } }
+
+“MovableCircle.java”
+
+public class MovableCircle implements Movable { private int radius; private MovablePoint center; public MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius) { this.center=new MovablePoint(x,y,xSpeed,ySpeed); this.radius=radius; } @Override public String toString() { return "MovableCircle{" + "radius=" + radius + ", center=" + center + '}'; } @Override public void moveUp() { center.y=center.y+center.ySpeed; } @Override public void moveDown() { center.y=center.y-center.ySpeed;
+
+} @Override public void moveLeft() { center.x=center.x-center.xSpeed; } @Override public void moveRight() { center.x=center.x+center.xSpeed; } }
+
+Результат работы программы:
