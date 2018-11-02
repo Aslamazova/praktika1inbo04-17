@@ -19,4 +19,3 @@ public class MovableCircle implements Movable { private int radius; private Mova
 
 } @Override public void moveLeft() { center.x=center.x-center.xSpeed; } @Override public void moveRight() { center.x=center.x+center.xSpeed; } }
 
-Результат работы программы:
