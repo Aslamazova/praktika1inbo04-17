@@ -1,2 +1,2 @@
-# praktika4inbo04-17
+# praktikainbo04-17
 Асламазова Мария
